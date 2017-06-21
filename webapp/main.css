@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 66%;
+    border-bottom: solid black;
+}
+
+p{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.text-holder{
+    text-align: center;
+}
+
+.image-list-holder{
+    width: 50%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    display: block;
+    font-size: 0px;
+}
+        
+.image-list{
+    list-style: none;
+}
+        
+.display-img{
+    width: 45%;
+}
+        
+.display-img-holder{
+    margin: 0px 0px 25px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+        
+.image-button{
+    margin-top: 10px;
+    width: 45%;
+    height: 75%;
+    font-size: 16px;
+    margin: auto;
+}
+
+.image-button:hover{
+    height: 100%;
+    font-size: 20px;
+}
+        
+.button-holder{
+    height: 30px;
+}
+        
+.section{
+    text-align: center;
+    display: block;
+    float:left;
+    width: 100%;
+}
+        
+.section-header{
+    margin: 20px;
+}
+
+#header{
+    position: fixed;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    mix-blend-mode: overlay;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#header-content{
+    padding-top: 20px;
+    padding-left: 50px;
+    width: 100%;
+}
+
+#image-header{
+    background:#3df url("https://wallpaperscraft.com/image/beach_ocean_sand_palm_trees_bungalows_95633_3840x2160.jpg") no-repeat fixed center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    padding: 100px, 0;
+    margin-bottom: 100px;
+    text-align:center
+}
+
+#opening-image{
+    height: 100%;
+}
+
+#image-text-holder{
+    padding-top: 40vh;
+    padding-bottom: 40vh;
+}
+
+#image-text{
+    font-size: 100px;
+}
+
+#return-button{
+    float: right;
+    width: 3%;
+    margin-right: 10%;
+    margin-top: 0;
+}
+
+#nav-text{
+    width:100%;
+}
+
+#logo{
+    display: block;
+    width: 20%;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+#list-left{
+    float: left;
+}
+        
+#list-right{
+    float: right;
+}
+        
+#section1{
+    background-color: lightblue;
+}
+#seciton2{
+    background-color: whitesmoke;
+}
+#section3{
+    background-color: lightblue;
+}
+        
+#section1 .image-button{
+    color:black;
+    background: lightgrey;
+    border: 1px solid lightgrey;
+}
+        
+#section2 .image-button{
+    border: 1px solid grey;
+    color: ghostwhite;
+    background: grey;
+}
+        
+#section3 .image-button{
+    color:black;
+    background: lightgrey;
+    border: 1px solid lightgrey;
+}
