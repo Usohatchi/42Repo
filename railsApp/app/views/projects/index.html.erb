@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style></style>
+    <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+    
+<body>
+	<div id="container">
+		<div id="header">
+			<div id="header-content">
+				<h1 id="nav-text">
+                    Header Text
+                    <%= link_to image_tag("http://www.iconsdb.com/icons/preview/white/plus-xxl.png",  :id => "return-button"), new_project_path %>
+                </h1>
+			</div>
+		</div>
+		<div id="logo-holder">
+			<img id="logo" src="http://www.morrell-middleton.co.uk/wp-content/uploads/logo-placeholder.jpg" alt="placeholder">
+		</div>
+        <div id="section1" class="section">
+            <h1 class="section-header" style="color:white">Section 1 Title</h1>
+            <div class="image-list-holder" id="list-left">
+                <ul class="image-list">
+                    <% @projects.each_with_index do |project,index| %>
+                        <% if index.even? %>
+                            <li class="display-img-holder">
+                                <img class="display-img" src=<%= project.image_link %> alt="placeholder">
+                                <%= button_to project.title, project_path(project), :method => "get", :class => "image-button" %>
+                            </li>
+                        <% end %>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="image-list-holder" id="list-right">
+                <ul class="image-list">
+                    <% @projects.each_with_index do |project, index| %>
+                        <% if index.odd? %>
+                            <li class="display-img-holder">
+                                <img class="display-img" src=<%= project.image_link %> alt="placeholder">
+                                <%= button_to project.title, project_path(project), :method => "get", :class => "image-button" %>
+                            </li>
+                        <% end %>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+        <!--
+        <div id="section2" class="section">
+            <h1 class="section-header">Section 2 Title</h1>
+            <div class="image-list-holder" id="list-left">
+                <ul class="image-list">
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="image-list-holder" id="list-right">
+                <ul class="image-list">
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="section3" class="section">
+            <h1 class="section-header" style="color:white">Section 3 Title</h1>
+            <div class="image-list-holder" id="list-left">
+                <ul class="image-list">
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="image-list-holder" id="list-right">
+                <ul class="image-list">
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                    <li class="display-img-holder">
+                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
+                        <form class="button-holder" action="#">
+                            <input class="image-button" type="submit" value="Text" />
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        -->
+	</div>
+</body>
+    
+</html>
