@@ -11,140 +11,69 @@
     
 <body>
 	<div id="container">
-		<div id="header">
-			<div id="header-content">
-				<h1 id="nav-text">
-                    Header Text
-                    <%= link_to image_tag("http://www.iconsdb.com/icons/preview/white/plus-xxl.png",  :id => "return-button"), new_project_path %>
-                </h1>
-			</div>
-		</div>
+        <ul class="nav-bar">
+            <li style="float: left; border: none" class="nav-bar-links"><%= link_to 'Header Text', projects_path, {:class => "nav-link"} %></li>
+            <li class="nav-bar-links"><%= link_to image_tag("http://www.iconsdb.com/icons/preview/white/plus-xxl.png",  :class => "nav-link"), new_project_path %></li>
+        </ul>
 		<div id="logo-holder">
 			<img id="logo" src="http://www.morrell-middleton.co.uk/wp-content/uploads/logo-placeholder.jpg" alt="placeholder">
 		</div>
-        <div id="section1" class="section">
-            <h1 class="section-header" style="color:white">Section 1 Title</h1>
-            <div class="image-list-holder" id="list-left">
-                <ul class="image-list">
-                    <% @projects.each_with_index do |project,index| %>
-                        <% if index.even? %>
-                            <li class="display-img-holder">
-                                <img class="display-img" src=<%= project.image_link %> alt="placeholder">
-                                <%= button_to project.title, project_path(project), :method => "get", :class => "image-button" %>
-                            </li>
+        <div class="image-list-holder list-left">
+            <ul class="image-list">
+                <% (0..@projects.length).step(4) do |index| %>
+                    <li class="display-img-holder">
+                        <% if !(@projects[index].nil?) %>
+                             <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
+                             <%= link_to project_path(@projects[index]) do %>
+                                <figcaption><p><%= @projects[index].title %></p></figcaption>
+                             <% end %>
                         <% end %>
-                    <% end %>
-                </ul>
-            </div>
-            <div class="image-list-holder" id="list-right">
-                <ul class="image-list">
-                    <% @projects.each_with_index do |project, index| %>
-                        <% if index.odd? %>
-                            <li class="display-img-holder">
-                                <img class="display-img" src=<%= project.image_link %> alt="placeholder">
-                                <%= button_to project.title, project_path(project), :method => "get", :class => "image-button" %>
-                            </li>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <div class="image-list-holder list-left">
+            <ul class="image-list">
+                <% (1..@projects.length).step(4) do |index| %>
+                    <li class="display-img-holder">
+                        <% if !(@projects[index].nil?) %>
+                             <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
+                             <%= link_to project_path(@projects[index]) do %>
+                                <figcaption><p><%= @projects[index].title %></p></figcaption>
+                             <% end %>
                         <% end %>
-                    <% end %>
-                </ul>
-            </div>
+                    </li>
+                <% end %>
+            </ul>
         </div>
-        <!--
-        <div id="section2" class="section">
-            <h1 class="section-header">Section 2 Title</h1>
-            <div class="image-list-holder" id="list-left">
-                <ul class="image-list">
+        <div class="image-list-holder list-right">
+            <ul class="image-list">
+                <% (3..@projects.length).step(4) do |index| %>
                     <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
+                        <% if !(@projects[index].nil?) %>
+                             <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
+                             <%= link_to project_path(@projects[index]) do %>
+                                <figcaption><p><%= @projects[index].title %></p></figcaption>
+                             <% end %>
+                        <% end %>
                     </li>
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                </ul>
-            </div>
-            <div class="image-list-holder" id="list-right">
-                <ul class="image-list">
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                </ul>
-            </div>
+                <% end %>
+            </ul>
         </div>
-        <div id="section3" class="section">
-            <h1 class="section-header" style="color:white">Section 3 Title</h1>
-            <div class="image-list-holder" id="list-left">
-                <ul class="image-list">
+        <div class="image-list-holder list-right">
+            <ul class="image-list">
+                <% (2..@projects.length).step(4) do |index| %>
                     <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
+                        <% if !(@projects[index].nil?) %>
+                             <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
+                             <%= link_to project_path(@projects[index]) do %>
+                                <figcaption><p><%= @projects[index].title %></p></figcaption>
+                             <% end %>
+                        <% end %>
                     </li>
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                </ul>
-            </div>
-            <div class="image-list-holder" id="list-right">
-                <ul class="image-list">
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                    <li class="display-img-holder">
-                        <img class="display-img" src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="placeholder">
-                        <form class="button-holder" action="#">
-                            <input class="image-button" type="submit" value="Text" />
-                        </form>
-                    </li>
-                </ul>
-            </div>
+                <% end %>
+            </ul>
         </div>
-        -->
 	</div>
 </body>
     

@@ -12,24 +12,17 @@ h2{
     border-bottom: solid black;
 }
 
-p{
-    width: 50%;
-    margin: auto;
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-
 .text-holder{
     text-align: center;
 }
 
 .image-list-holder{
-    width: 50%;
+    width: 25%;
     padding: 0px;
     margin: 0px;
     border: 0px;
     display: block;
-    font-size: 0px;
+    text-align: center;
 }
         
 .image-list{
@@ -37,15 +30,39 @@ p{
 }
         
 .display-img{
-    width: 45%;
+    vertical-align: middle;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s;
+    mix-blend-mode: luminosity;
+}
+
+.display-img-holder:hover .display-img{
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+.display-img-holder:hover figcaption{
+    opacity: 1;
+}
+
+.display-img-holder:hover figcaption p{
+    transform: translateY(100px)
 }
         
 .display-img-holder{
-    margin: 0px 0px 25px 0px;
     padding: 0px;
-    width: 100%;
-    text-align: center;
+    width: 90%;
+    height: 350px; 
+    overflow: hidden;
+    margin:0px auto 25px auto;
+    background: grey;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
 }
+
         
 .image-button{
     margin-top: 10px;
@@ -75,25 +92,66 @@ p{
     margin: 20px;
 }
 
-#header{
-    position: fixed;
-    color: white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
-    padding: 0;
+.nav-bar{
+    list-style-type: none;
     margin: 0;
+    padding: 0;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
-    mix-blend-mode: overlay;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*mix-blend-mode: overlay;*/
 }
 
-#header-content{
-    padding-top: 20px;
-    padding-left: 50px;
-    width: 100%;
+.nav-bar-links{
+    float:right; 
+    border-left: 1px solid #bbb
 }
+
+.nav-bar-links .nav-link{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    height: 20px;
+}
+
+.nav-bar-links .nav-link:hover:not(.active) {
+    background-color: #111;
+    transition: 0.7s;
+}
+
+.active {
+    background-color: lightblue;
+}
+
+
+.display-img-holder figcaption {
+    color: white;
+    display: table;
+    height: 20px;
+    width: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    transition: all 0.7s;
+}
+
+.display-img-holder figcaption p {
+    display: table-cell;
+    top: -200px;
+    width: 200px;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    transition: all 0.7s;
+}
+
 
 #opening-image{
     height: 100%;
@@ -108,57 +166,19 @@ p{
     font-size: 100px;
 }
 
-#return-button{
-    float: right;
-    width: 3%;
-    margin-right: 10%;
-    margin-top: 0;
-}
-
-#nav-text{
-    width:100%;
-}
-
 #logo{
     display: block;
     width: 20%;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 70px;
     padding-bottom: 50px;
 }
 
-#list-left{
+.list-left{
     float: left;
 }
         
-#list-right{
+.list-right{
     float: right;
 }
         
-#section1{
-    background-color: lightblue;
-}
-#seciton2{
-    background-color: whitesmoke;
-}
-#section3{
-    background-color: lightblue;
-}
-        
-#section1 .image-button{
-    color:black;
-    background: lightgrey;
-    border: 1px solid lightgrey;
-}
-        
-#section2 .image-button{
-    border: 1px solid grey;
-    color: ghostwhite;
-    background: grey;
-}
-        
-#section3 .image-button{
-    color:black;
-    background: lightgrey;
-    border: 1px solid lightgrey;
-}

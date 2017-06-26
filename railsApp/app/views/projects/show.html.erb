@@ -21,19 +21,12 @@
     <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="header">
-        <div id="header-content">
-            <h1 id="nav-text">
-                Header Text
-            <!--
-            <a href="#">
-                <img id="return-button" src="http://www.clker.com/cliparts/c/3/0/7/12456877162087486429Soeb_Plain_Arrow_7.svg.med.png" alt="return button">
-            </a>
-            -->
-            <%= link_to image_tag("http://www.clker.com/cliparts/c/3/0/7/12456877162087486429Soeb_Plain_Arrow_7.svg.med.png",  :id => "return-button"), projects_path %>
-            </h1>
-        </div>
-    </div>
+    <ul class="nav-bar">
+            <li style="float: left; border: none" class="nav-bar-links"><%= link_to 'Header Text', projects_path, {:class => "nav-link"} %></li>
+            <li class="nav-bar-links"><%= link_to image_tag("http://www.clker.com/cliparts/c/3/0/7/12456877162087486429Soeb_Plain_Arrow_7.svg.med.png",  :class => "nav-link"), projects_path %></li>
+            <li class="nav-bar-links"><%= link_to 'Edit', edit_project_path(@project), :class => "nav-link" %></li>
+            <li class="nav-bar-links"><%= link_to "Delete", project_path(@project), :method => "delete", :class => "nav-link", data: { confirm: 'Are you sure?' }%></li>
+        </ul>
     <div>
         <header id="image-header">
             <div id="image-text-holder">
