@@ -3,11 +3,6 @@
     padding: 0;
 }
 
-.text-holder{
-    text-align: center;
-    height: 70vh;
-}
-
 .image-list-holder{
     width: 25%;
     padding: 0px;
@@ -202,17 +197,22 @@
     padding-bottom: 50px;
 }
 
-.text-title{
-    font-size: 40px;
+.text-holder{
+    padding-top: 5vh;
     text-align: center;
-    margin: auto;
-    margin-bottom: 20px;
-    width: 66%;
-    border-bottom: solid black;
+    height: 100vh;
+    width: 100%;
+    display: inline-block;
 }
 
 .text-paragraph{
-    height: 100%;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 10vh;
+    text-align: left;
+    float: left;
+    border-left: 3px solid black;
+    padding-left: 20px;
 }
 
 .list-left{
