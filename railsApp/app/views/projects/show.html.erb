@@ -14,7 +14,7 @@
             margin: 0;
             color: white;
             padding: 100px, 0;
-            margin-bottom: 100px;
+            margin-bottom: 5vh;
             text-align:center
         }
     </style>
@@ -22,25 +22,23 @@
 </head>
 <body>
     <ul class="nav-bar">
-            <li style="float: left; border: none" class="nav-bar-links"><%= link_to 'Header Text', projects_path, {:class => "nav-link"} %></li>
-            <li class="nav-bar-links"><%= link_to image_tag("http://www.clker.com/cliparts/c/3/0/7/12456877162087486429Soeb_Plain_Arrow_7.svg.med.png",  :class => "nav-link"), projects_path %></li>
-            <li class="nav-bar-links"><%= link_to 'Edit', edit_project_path(@project), :class => "nav-link" %></li>
-            <li class="nav-bar-links"><%= link_to "Delete", project_path(@project), :method => "delete", :class => "nav-link", data: { confirm: 'Are you sure?' }%></li>
-        </ul>
+        <li style="float: left; border: none;" class="nav-bar-links"><%= link_to 'Header Text', projects_path, :class => "nav-link" %></li>
+        <li class="nav-bar-links"><%= link_to "Back", projects_path, :class => "nav-link" %></li>
+        <li class="nav-bar-links"><%= link_to 'Edit', edit_project_path(@project), :class => "nav-link" %></li>
+        <li class="nav-bar-links"><%= link_to "Delete", project_path(@project), :method => "delete", :class => "nav-link", data: { confirm: 'Are you sure?' }%></li>
+    </ul>
     <div>
         <header id="image-header">
             <div id="image-text-holder">
                 <h1 id="img-text">
                     <%= @project.title %>
+                    <div class="border"></div>
                 </h1>
             </div>
         </header>
     </div>
-    <div class="text-holder">
-        <h2>
-            <%= @project.title %>
-        </h2>
-        <div class="text-holder" style="margin-bottom: 70vh">
+    <div class="text-holder" >
+        <div class="text-paragraph">
             <%= @project.text %>
         </div>
     </div>

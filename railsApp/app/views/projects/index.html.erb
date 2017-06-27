@@ -12,8 +12,8 @@
 <body>
 	<div id="container">
         <ul class="nav-bar">
-            <li style="float: left; border: none" class="nav-bar-links"><%= link_to 'Header Text', projects_path, {:class => "nav-link"} %></li>
-            <li class="nav-bar-links"><%= link_to image_tag("http://www.iconsdb.com/icons/preview/white/plus-xxl.png",  :class => "nav-link"), new_project_path %></li>
+            <li style="float: left; border: none" class="nav-bar-links"><%= link_to 'Header Text', projects_path, :class => "nav-link" %></li>
+            <li class="nav-bar-links"><%= link_to "New", new_project_path, :class => "nav-link" %></li>
         </ul>
 		<div id="logo-holder">
 			<img id="logo" src="http://www.morrell-middleton.co.uk/wp-content/uploads/logo-placeholder.jpg" alt="placeholder">
@@ -25,7 +25,7 @@
                         <% if !(@projects[index].nil?) %>
                              <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
                              <%= link_to project_path(@projects[index]) do %>
-                                <figcaption><p><%= @projects[index].title %></p></figcaption>
+                                <figcaption><div><%= @projects[index].title %><hr class="border"/></div></figcaption>
                              <% end %>
                         <% end %>
                     </li>
@@ -39,7 +39,7 @@
                         <% if !(@projects[index].nil?) %>
                              <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
                              <%= link_to project_path(@projects[index]) do %>
-                                <figcaption><p><%= @projects[index].title %></p></figcaption>
+                                <figcaption><div><%= @projects[index].title %><hr class="border"/></div></figcaption>
                              <% end %>
                         <% end %>
                     </li>
@@ -53,7 +53,7 @@
                         <% if !(@projects[index].nil?) %>
                              <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
                              <%= link_to project_path(@projects[index]) do %>
-                                <figcaption><p><%= @projects[index].title %></p></figcaption>
+                                <figcaption><div><%= @projects[index].title %><hr class="border"/></div></figcaption>
                              <% end %>
                         <% end %>
                     </li>
@@ -67,7 +67,7 @@
                         <% if !(@projects[index].nil?) %>
                              <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
                              <%= link_to project_path(@projects[index]) do %>
-                                <figcaption><p><%= @projects[index].title %></p></figcaption>
+                                <figcaption><div><%= @projects[index].title %><hr class="border"/></div></figcaption>
                              <% end %>
                         <% end %>
                     </li>
