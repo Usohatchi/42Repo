@@ -25,7 +25,15 @@
                         <% if !(@projects[index].nil?) %>
                              <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
                              <%= link_to project_path(@projects[index]) do %>
-                                <figcaption><div><%= @projects[index].title %><hr class="border"/></div></figcaption>
+                                <figcaption>
+                                    <div>                                    
+                                        <h3><%= @projects[index].title %></h3>
+                                        <hr class="border" />
+                                        <%= @projects[index].photographer %>
+                                        <br>
+                                        <%= @projects[index].price %>
+                                    </div>
+                                </figcaption>
                              <% end %>
                         <% end %>
                     </li>
@@ -39,8 +47,16 @@
                         <% if !(@projects[index].nil?) %>
                              <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
                              <%= link_to project_path(@projects[index]) do %>
-                                <figcaption><div><%= @projects[index].title %><hr class="border"/></div></figcaption>
-                             <% end %>
+                                <figcaption>
+                                    <div>                                    
+                                        <h3><%= @projects[index].title %></h3>
+                                        <hr class="border" />
+                                        <%= @projects[index].photographer %>
+                                        <br>
+                                        <%= @projects[index].price %>
+                                    </div>
+                                </figcaption>
+                            <% end %>
                         <% end %>
                     </li>
                 <% end %>
@@ -53,7 +69,15 @@
                         <% if !(@projects[index].nil?) %>
                              <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
                              <%= link_to project_path(@projects[index]) do %>
-                                <figcaption><div><%= @projects[index].title %><hr class="border"/></div></figcaption>
+                                <figcaption>
+                                    <div>                                    
+                                        <h3><%= @projects[index].title %></h3>
+                                        <hr class="border" />
+                                        <%= @projects[index].photographer %>
+                                        <br>
+                                        <%= @projects[index].price %>
+                                    </div>
+                                </figcaption>
                              <% end %>
                         <% end %>
                     </li>
@@ -67,7 +91,15 @@
                         <% if !(@projects[index].nil?) %>
                              <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
                              <%= link_to project_path(@projects[index]) do %>
-                                <figcaption><div><%= @projects[index].title %><hr class="border"/></div></figcaption>
+                                <figcaption>
+                                    <div>                                    
+                                        <h3><%= @projects[index].title %></h3>
+                                        <hr class="border" />
+                                        <%= @projects[index].photographer %>
+                                        <br>
+                                        <%= @projects[index].price %>
+                                    </div>
+                                </figcaption>
                              <% end %>
                         <% end %>
                     </li>
