@@ -3,11 +3,31 @@
     padding: 0;
 }
 
+html{
+    background: black;
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+body{
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
+}
+
+.wrap{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
 .image-list-holder{
-    width: 25%;
     padding: 0px;
     margin: 0px;
     border: 0px;
+    width: 25%;
+    margin-bottom: 20px;
 }
         
 .image-list{
@@ -17,12 +37,14 @@
 .display-img-holder{
     padding: 0px;
     width: 90%;
-    height: 350px; 
     overflow: hidden;
-    margin:0px auto 20px auto;
-    background-color: rgba(211,211,211,0.9);
+    margin:0px auto 2vw auto;
+    background-color: rgba(80,80,80,0.8);
+    border-radius: 3%;
     position: relative;
-    transition: all 2s ease;
+    transition: all 1s ease;
+    -webkit-backface-visibility: hidden;
+    height: calc(94vw/4); 
 }
 
 .display-img{
@@ -31,7 +53,9 @@
     width: 100%;
     height: 100%;
     mix-blend-mode: luminosity;
-    transition: all 2s ease;
+    transition: all 1s ease;
+    border-radius: 3%;
+    border: 1px solid black;
 }
 
 .display-img-holder figcaption {
@@ -46,29 +70,40 @@
     top: 0;
     z-index: 100;
     transition: all 0.5s ease;
+    mix-blend-mode: difference;
 }
 
 .display-img-holder figcaption div {
     display: table-cell;
     top: -200px;
     width: 100%;
-    font-size: 10px;
+    font-size: 1.25vw;
     vertical-align: middle;
     text-align: center;
     transition: all 1s ease;
 }
 
-.display-img-holder figcaption div .border{
+.display-img-holder figcaption div .border1{
     margin-right: auto;
     margin-left: auto;
-    margin-top: 20px;
+    margin-top: 1vw;
+    margin-bottom: 0.4vw;
+    width: 0%;
+    border-bottom: 0px solid transparent;
+    transition: all 1s ease;
+}
+
+.display-img-holder figcaption div .border2{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0.4vw;
     width: 0%;
     border-bottom: 0px solid transparent;
     transition: all 1s ease;
 }
 
 .display-img-holder figcaption div h3{
-    font-size: 20px;
+    font-size: 2vw;
     transition: all 1s ease;
 }
 
@@ -79,6 +114,8 @@
 .display-img-holder:hover .display-img{
     opacity: 0.9;
     transform: scale(1.2);
+    transform: translateZ(0);
+    
 }
 
 .display-img-holder:hover figcaption{
@@ -86,47 +123,21 @@
 }
 
 .display-img-holder:hover figcaption div{
-    transform: translateY(100px);
-    font-weight: bold;
-    font-size: 17px;
+    transform: translateY(6vw);
 }
 
-.display-img-holder:hover figcaption div .border{
+.display-img-holder:hover figcaption div .border1{
     border-bottom: 1px solid white;
     width: 60%;
 }
 
-.display-img-holder:hover figcaption div h3{
-    font-weight: bold;
-    font-size: 28px;
-}
-        
-.image-button{
-    margin-top: 10px;
-    width: 45%;
-    height: 75%;
-    font-size: 16px;
-    margin: auto;
+.display-img-holder:hover figcaption div .border2{
+    border-bottom: 1px solid white;
+    width: 30%;
 }
 
-.image-button:hover{
-    height: 100%;
-    font-size: 20px;
-}
-        
-.button-holder{
-    height: 30px;
-}
-        
-.section{
-    text-align: center;
-    display: block;
-    float:left;
-    width: 100%;
-}
-        
-.section-header{
-    margin: 20px;
+.display-img-holder:hover figcaption div h3{
+    font-weight: bold;
 }
 
 .nav-bar{
@@ -134,11 +145,12 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(100, 100, 100, 0.5);
     position: fixed;
     top: 0;
     width: 100%;
-    mix-blend-mode: overlay;
+    z-index: 200;
+    transform: translateZ(0);
 }
 
 .nav-bar-links{
@@ -150,74 +162,204 @@
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 25px;
     text-decoration: none;
     height: 20px;
+    transition: all 0.5s ease;
     /*mix-blend-mode: difference;*/
 }
 
 .nav-bar-links .nav-link:hover:not(.active) {
-    background-color: #111;
-    transition: 0.7s;
+    background-color: rgba(10,10,10,1);
+}
+
+.nav-bar2{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(50, 50, 50, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    mix-blend-mode: overlay;
+    z-index: 100;
+    transition: all 0.7s ease;
+    opacity: 0;
+    transform: translateZ(0);
+}
+
+.nav-bar2:hover{
+    opacity: 1;
 }
 
 .active {
     background-color: lightblue;
 }
 
-#opening-image{
-    height: 100%;
-}
-
-#image-text-holder{
-    padding-top: 85vh;
-    padding-bottom: 15vh;
-    padding-right: 92vh;
-    padding-left: 8vh;
-    width: 100%;
-}
-
-#img-text{
-    color: black;
-    float: left;
+.img-text{
+    color: white;
     text-align: left;
     font-size: 75px;
-    width: 100%;
+    width: 80%;
     height: 100px;
-    mix-blend-mode: overlay;
+    left: 7%;
+    bottom: 6%;
+    position: absolute;
+    /*mix-blend-mode: difference;*/
     z-index: 100;
+    opacity: 0.7;
 }
 
-#img-text .border{
-    border-bottom: 5px solid black;
-    width: 20%;
+.img-text #border1{
+    border-bottom: 5px solid white;
+    width: 0%;
+    transition: all 1s ease;
 }
 
 #logo{
     display: block;
     width: 20%;
     margin: auto;
-    padding-top: 70px;
-    padding-bottom: 50px;
+    padding-top: 4vh;
+    height:90%;
 }
 
-.text-holder{
-    padding-top: 5vh;
+#logo-holder{
+    width:100%;
+}
+
+#logo-holder #border1{
+    width: 91%;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo-holder #border2{
+    width: 70%;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#show-text{  
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 6vh;
+    width: 10%;
+    transition: all 0.7s ease;
     text-align: center;
-    height: 100vh;
-    width: 100%;
-    display: inline-block;
 }
 
-.text-paragraph{
-    display: inline-block;
-    font-size: 20px;
-    margin-left: 10vh;
+#show-text .background{
+    transition: all 0.7s ease;
+    background-color: rgba(0,0,0,0.5);
+    mix-blend-mode: difference;
+    height:100%;
+    width:100%;
+}
+
+#show-text:hover .background{
+    background-color: #111;
+    opacity: 1;
+}
+
+
+#show-text img{
+    position:absolute;
+    opacity: 0.3;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    margin:auto;
+    height: 75%;
+    mix-blend-mode: difference;
+    transition: all 0.7s ease;
+    -webkit-backface-visibility: hidden;
+}
+
+#show-text:hover img{
+    opacity: 0.9;
+    transform: translateZ(0);
+}
+
+#hidden-text{
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.body-holder{
+    background-color: rgba(10,10,10,0.5);
+    width: 90%;
+    height: 70vh;
+    position: absolute;
+    top: 14vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.body-holder .body{
+    position: absolute;
+    color:white;
+    opacity: 0.7;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     text-align: left;
+    width: 100%;
+    height: 70vh;
+}
+
+.body-holder .body .title{
+    margin: 5% 0 5px 8%;
+    width:92%;
     float: left;
-    border-left: 3px solid black;
-    padding-left: 20px;
-    padding-right: 250px;
+}
+
+.body-holder .body .title #border2{
+    margin-bottom: 20px;
+    width:0%;
+    float: left;
+    border-bottom: 1px solid white;
+    transition: all 1.5s ease;
+}
+
+.body-holder .body .title2{
+    margin: 0 0 5px 8%;
+    width:92%;
+    float: left;
+}
+
+.body-holder .body .title2 #border3{
+    margin-bottom: 20px;
+    width:0%;
+    float: left;
+    border-bottom: 1px solid white;
+    transition: all 1s ease;
+}
+
+.body-holder .body .text{
+    width:85%;
+    height: 75%;
+    margin: 0 0 5% 8%;
+    overflow-y: scroll;
+    white-space: pre-line;
+}
+
+#copyright{
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+    opacity: 0.5;
+    color:white;
+    position: absolute;
+    bottom:5px;
 }
 
 .list-left{
@@ -227,4 +369,5 @@
 .list-right{
     float: right;
 }
+
         

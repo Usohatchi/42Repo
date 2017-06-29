@@ -5,108 +5,77 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
+    <script></script>
 	<style></style>
-    <link href="main.css" rel="stylesheet" type="text/css">
 </head>
     
 <body>
 	<div id="container">
-        <ul class="nav-bar">
-            <li style="float: left; border: none" class="nav-bar-links"><%= link_to 'Header Text', projects_path, :class => "nav-link" %></li>
+        <ul class="nav-bar2">
+            <li style="float: left; border: none" class="nav-bar-links"><%= link_to '42', projects_path, :class => "nav-link" %></li>
             <li class="nav-bar-links"><%= link_to "New", new_project_path, :class => "nav-link" %></li>
         </ul>
 		<div id="logo-holder">
-			<img id="logo" src="http://www.morrell-middleton.co.uk/wp-content/uploads/logo-placeholder.jpg" alt="placeholder">
+			<img id="logo" src=<%= image_url("42.png") %> alt="placeholder">
+            <div id="border1"></div>
+            <br>
+            <div id="border2"></div>
 		</div>
-        <div class="image-list-holder list-left">
-            <ul class="image-list">
-                <% (0..@projects.length).step(4) do |index| %>
-                    <li class="display-img-holder">
-                        <% if !(@projects[index].nil?) %>
-                             <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
-                             <%= link_to project_path(@projects[index]) do %>
-                                <figcaption>
-                                    <div>                                    
-                                        <h3><%= @projects[index].title %></h3>
-                                        <hr class="border" />
-                                        <%= @projects[index].photographer %>
-                                        <br>
-                                        <%= @projects[index].price %>
-                                    </div>
-                                </figcaption>
-                             <% end %>
-                        <% end %>
-                    </li>
-                <% end %>
-            </ul>
-        </div>
-        <div class="image-list-holder list-left">
-            <ul class="image-list">
-                <% (1..@projects.length).step(4) do |index| %>
-                    <li class="display-img-holder">
-                        <% if !(@projects[index].nil?) %>
-                             <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
-                             <%= link_to project_path(@projects[index]) do %>
-                                <figcaption>
-                                    <div>                                    
-                                        <h3><%= @projects[index].title %></h3>
-                                        <hr class="border" />
-                                        <%= @projects[index].photographer %>
-                                        <br>
-                                        <%= @projects[index].price %>
-                                    </div>
-                                </figcaption>
+        <div class="wrap">
+            <% (0..3).step(1) do |i| %>
+                <% if i <= (4/2).to_i %>
+                    <div class="image-list-holder list-left">
+                        <ul class="image-list">
+                            <% (i..@projects.length).step(4) do |index| %>
+                                <li class="display-img-holder">
+                                    <% if !(@projects[index].nil?) %>
+                                         <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
+                                         <%= link_to project_path(@projects[index]) do %>
+                                            <figcaption>
+                                                <div>                                    
+                                                    <h3><%= @projects[index].title %></h3>
+                                                    <hr class="border1" />
+                                                    <%= @projects[index].photographer %>
+                                                    <br>
+                                                    $ <%= @projects[index].price %>
+                                                    <hr class="border2" />
+                                                </div>
+                                            </figcaption>
+                                         <% end %>
+                                    <% end %>
+                                </li>
                             <% end %>
-                        <% end %>
-                    </li>
+                        </ul>
+                    </div>
+                <% else %>
+                    <div class="image-list-holder list-right">
+                        <ul class="image-list">
+                            <% (i..@projects.length).step(4) do |index| %>
+                                <li class="display-img-holder">
+                                    <% if !(@projects[index].nil?) %>
+                                         <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
+                                         <%= link_to project_path(@projects[index]) do %>
+                                            <figcaption>
+                                                <div>                                    
+                                                    <h3><%= @projects[index].title %></h3>
+                                                    <hr class="border1" />
+                                                    <%= @projects[index].photographer %>
+                                                    <br>
+                                                    $ <%= @projects[index].price %>
+                                                    <hr class="border2" />
+                                                </div>
+                                            </figcaption>
+                                         <% end %>
+                                    <% end %>
+                                </li>
+                            <% end %>
+                        </ul>
+                    </div>
                 <% end %>
-            </ul>
-        </div>
-        <div class="image-list-holder list-right">
-            <ul class="image-list">
-                <% (3..@projects.length).step(4) do |index| %>
-                    <li class="display-img-holder">
-                        <% if !(@projects[index].nil?) %>
-                             <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
-                             <%= link_to project_path(@projects[index]) do %>
-                                <figcaption>
-                                    <div>                                    
-                                        <h3><%= @projects[index].title %></h3>
-                                        <hr class="border" />
-                                        <%= @projects[index].photographer %>
-                                        <br>
-                                        <%= @projects[index].price %>
-                                    </div>
-                                </figcaption>
-                             <% end %>
-                        <% end %>
-                    </li>
-                <% end %>
-            </ul>
-        </div>
-        <div class="image-list-holder list-right">
-            <ul class="image-list">
-                <% (2..@projects.length).step(4) do |index| %>
-                    <li class="display-img-holder">
-                        <% if !(@projects[index].nil?) %>
-                             <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
-                             <%= link_to project_path(@projects[index]) do %>
-                                <figcaption>
-                                    <div>                                    
-                                        <h3><%= @projects[index].title %></h3>
-                                        <hr class="border" />
-                                        <%= @projects[index].photographer %>
-                                        <br>
-                                        <%= @projects[index].price %>
-                                    </div>
-                                </figcaption>
-                             <% end %>
-                        <% end %>
-                    </li>
-                <% end %>
-            </ul>
+            <% end %>
         </div>
 	</div>
 </body>
     
 </html>
+<div id="copyright">&copy; 2017 Eamon Ito-Fisher</div>
