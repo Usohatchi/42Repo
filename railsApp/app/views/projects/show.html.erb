@@ -20,15 +20,17 @@
         
         function showText(){
             document.getElementById("hidden-text").style.opacity = "1";
+            document.getElementById("scroll-down").style.opacity = "1";
             document.getElementById("show-text").style.opacity = "0";
             document.getElementById("border1").style.width = "20%";
             document.getElementById("border2").style.width = "92%";
-            document.getElementById("border3").style.width = "72%";
+            document.getElementById("border3").style.width = "75%";
         }
 
         function hideText(){
             document.getElementById("hidden-text").style.opacity = "0";
             document.getElementById("show-text").style.opacity = "0.3";
+            document.getElementById("scroll-down").style.opacity = "0.3";
             document.getElementById("border1").style.width = "0%";
             document.getElementById("border2").style.width = "0%";
             document.getElementById("border3").style.width = "0%";
@@ -58,7 +60,7 @@
     </script>
 </head>
 <body>
-    <div>
+    <div id="main">
         <ul class="nav-bar2">
             <li style="float: left; border: none;" class="nav-bar-links"><%= link_to '42', projects_path, :class => "nav-link" %></li>
             <li class="nav-bar-links"><%= link_to "Back", projects_path, :class => "nav-link" %></li>
@@ -82,11 +84,21 @@
                          <div id="border1"></div>
                     </h1>
                 </div>
+                <a href="#page2">
+                    <div id="scroll-down">
+                        <img id="down-arrow" src=<%= image_url("down_arrow.png") %> alt="down-arrow" >
+                    </div>
+                </a>
                 <div id="show-text" onclick="showText()">
-                    <div id="show-text-background" class="background" onclick="showText()"></div>
-                    <img id="show-text-id" src=<%= image_url("plus-xxl.png") %> alt="plus" onclick="showText()">
+                    <div id="show-text-background" class="background" ></div>
+                    <img id="show-text-id" src=<%= image_url("plus-xxl.png") %> alt="plus">
                 </div>
             </header>
+        </div>
+        <div id="page2">
+            <div>
+                <h1 id="page2-title">Text</h1>
+            </div>
         </div>
     </div>
 </body>

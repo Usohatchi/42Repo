@@ -22,11 +22,11 @@
             <div id="border2"></div>
 		</div>
         <div class="wrap">
-            <% (0..3).step(1) do |i| %>
-                <% if i <= (4/2).to_i %>
+            <% (0..2).step(1) do |i| %>
+                <% if i <= (3/2).to_i %>
                     <div class="image-list-holder list-left">
                         <ul class="image-list">
-                            <% (i..@projects.length).step(4) do |index| %>
+                            <% (i..@projects.length).step(3) do |index| %>
                                 <li class="display-img-holder">
                                     <% if !(@projects[index].nil?) %>
                                          <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
@@ -50,7 +50,7 @@
                 <% else %>
                     <div class="image-list-holder list-right">
                         <ul class="image-list">
-                            <% (i..@projects.length).step(4) do |index| %>
+                            <% (i..@projects.length).step(3) do |index| %>
                                 <li class="display-img-holder">
                                     <% if !(@projects[index].nil?) %>
                                          <%= link_to image_tag(@projects[index].image_link,  :class => "display-img"), project_path(@projects[index]) %>
